@@ -2,14 +2,14 @@
 Feature: Login
   @Smoke
   Scenario: As an advisor I should be able to successfully login to Imposta
-    Given I’m on the login page
+    Given I'm on the login page
     When I enter  valid username as "info@conslynk.com"
     Then I enter valid  password as "Yolladvisor1"
     And I click on login button
     Then I am navigated to home page
   @Smoke @LoginModule
   Scenario: As an advisor I should NOT be able to login with incorrect credentials
-    Given I’m on the login page
+    Given I'm on the login page
     When I enter  valid username as "info@conslynk.com"
     Then I enter invalid  password
     And I click on login button
@@ -23,7 +23,7 @@ Feature: Login
       #Scenario Outline Practice
 
   Scenario Outline: As an advisor I should be able to successfully search users by first name
-    Given I’m on the login page
+    Given I'm on the login page
     Given I am successfully logged in
     When User clicks client tab
     And User enters client name as "<Names>"
@@ -51,7 +51,7 @@ Feature: Login
 
 
          #DataTable Practice #2 - without Table Headers
-  @Search
+  #@Search
   Scenario: As an advisor I should be able to successfully search users by first name
     Given I’m on the login page
     Given I am successfully logged in

@@ -20,7 +20,7 @@ public class LoginStep {
     static String keyword;
 
 
-    @Given("I’m on the login page")
+    @Given("I'm on the login page")
     public void i_m_on_the_login_page() {
         Driver.getDriver().get("http://app.imposta.com/");
     }
