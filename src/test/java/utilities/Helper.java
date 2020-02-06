@@ -14,7 +14,7 @@ import java.util.Random;
 import static org.junit.Assert.assertTrue;
 
 
-public class BrowserUtils {
+public class Helper {
 
     public static void wait(int secs) {
         try {
