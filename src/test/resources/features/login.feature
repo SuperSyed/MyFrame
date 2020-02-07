@@ -7,3 +7,5 @@ Feature: Login
     Then I enter valid  password as "Yolladvisor1"
     And I click on login button
     Then I am navigated to home page
+
+  # Scenario: As an advisor I should get error message when incorrect credentials provided
