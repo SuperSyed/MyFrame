@@ -1,5 +1,6 @@
 package step_definitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -10,7 +11,7 @@ import utilities.Driver;
 
 public class LoginStep {
      LoginPage loginPage= new LoginPage();
-    static String keyword;
+     static String keyword;
 
 
     @Given("I'm on the login page")
@@ -38,5 +39,11 @@ public class LoginStep {
     public void i_am_navigated_to_home_page() {
         Assert.assertEquals( "Yoll Advisor Testing", loginPage.userInfo.getText());
     }
+
+    @Given("I'm successfully logged in")
+    public void i_m_successfully_logged_in() {
+        loginPage.login(ConfigurationReader.getProperty("username"), ConfigurationReader.getProperty("password"));
+    }
+
 
 }
