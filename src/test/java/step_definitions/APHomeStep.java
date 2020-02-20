@@ -2,6 +2,7 @@ package step_definitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.interactions.Actions;
 import pages.APHomePage;
 import pages.APSearchPage;
@@ -34,5 +35,32 @@ public class APHomeStep {
     @Then("I am navigated to causal dresses page")
     public void i_am_navigated_to_causal_dresses_page() {
         Assert.assertEquals(aPHomePage.casualDressTitle.getText().trim(), "CASUAL DRESSES");
+    }
+
+    @Given("I' on swisnl page")
+    public void iOnSwisnlPage() {
+        Driver.getDriver().get(ConfigurationReader.getProperty("swisnl.url"));
+    }
+    @Then("I right click on element and verify functionality")
+    public void iRightClickOnElementAndVerifyFunctionality() {
+        Actions act = new Actions(Driver.getDriver());
+        act.contextClick(aPHomePage.clickMeButton).build().perform();
+        aPHomePage.copyButton.click();
+        Alert alert = Driver.getDriver().switchTo().alert();
+        Assert.assertEquals("clicked: copy", alert.getText());
+        alert.accept();
+    }
+    @Given("I'm on the dhtmlgoodies page")
+    public void i_m_on_the_dhtmlgoodies_page() {
+        Driver.getDriver().get(ConfigurationReader.getProperty("dhtmlgoodies.url"));
+    }
+    @Then("I can drag and drop city")
+    public void i_can_drag_and_drop_city() {
+        Actions act = new Actions(Driver.getDriver());
+        act.dragAndDrop(aPHomePage.washington, aPHomePage.unitedStates).perform();
+    }
+    @Then("I verify color of answer")
+    public void i_verify_color_of_answer() {
+        Assert.assertEquals(aPHomePage.washington.getCssValue("background-color"), "rgba(0, 255, 0, 1)");
     }
 }

@@ -5,3 +5,15 @@ Feature: Automation Practice HomePage features
     Then I hover over womens tab
     And I click on casual dresses link
     Then I am navigated to causal dresses page
+
+
+  @right-click
+  Scenario: As a user I can right click on the element and select copy
+    Given I' on swisnl page
+    Then I right click on element and verify functionality
+
+  @drag-drop
+  Scenario: As a user I can drag and drop cities
+    Given I'm on the dhtmlgoodies page
+    Then I can drag and drop city
+    Then I verify color of answer

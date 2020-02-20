@@ -21,4 +21,12 @@ public class APHomePage {
     public WebElement casualDressLink;
     @FindBy(css = ".cat-name")
     public WebElement casualDressTitle;
+    @FindBy(css =".rst-content .context-menu-one")
+    public WebElement clickMeButton;
+    @FindBy(css = ".context-menu-icon-copy")
+    public WebElement copyButton;
+    @FindBy(id = "box3")
+    public  WebElement washington;
+    @FindBy(id = "box103")
+    public  WebElement unitedStates;
 }
