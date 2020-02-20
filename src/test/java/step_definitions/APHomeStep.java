@@ -63,4 +63,15 @@ public class APHomeStep {
     public void i_verify_color_of_answer() {
         Assert.assertEquals(aPHomePage.washington.getCssValue("background-color"), "rgba(0, 255, 0, 1)");
     }
+    @Given("I'm on jQuery page")
+    public void iMOnJQueryPage() {
+        Driver.getDriver().get(ConfigurationReader.getProperty("jQueryToolti.url"));
+    }
+    @Then("I see tooltip on the age inputbox")
+    public void iSeeTooltipOnTheAgeInputbox() {
+        Driver.getDriver().switchTo().frame(0);
+//        WaitHelper.waitForVisibility(aPHomePage.ageInputBox, 3);
+        Assert.assertEquals("We ask for your age only for statistical purposes.", aPHomePage.ageInputBox.getAttribute("title"));
+        Driver.getDriver().switchTo().defaultContent();
+    }
 }

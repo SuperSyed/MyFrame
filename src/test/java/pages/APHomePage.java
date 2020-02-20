@@ -29,4 +29,6 @@ public class APHomePage {
     public  WebElement washington;
     @FindBy(id = "box103")
     public  WebElement unitedStates;
+    @FindBy(id="age")
+    public WebElement ageInputBox;
 }

@@ -17,3 +17,8 @@ Feature: Automation Practice HomePage features
     Given I'm on the dhtmlgoodies page
     Then I can drag and drop city
     Then I verify color of answer
+
+  @tooltip
+  Scenario: As a user I should see tooltop
+    Given I'm on jQuery page
+    Then I see tooltip on the age inputbox

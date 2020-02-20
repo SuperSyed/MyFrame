@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         "json:target/cucumber.json"},
         features="src/test/resources/features",
         glue="step_definitions",
-        tags="@drag-drop",
+        tags="@tooltip",
         dryRun = false,
         monochrome = true
 )
