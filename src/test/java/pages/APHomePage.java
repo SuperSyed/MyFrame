@@ -15,4 +15,10 @@ public class APHomePage {
     public WebElement searchBox;
     @FindBy(name="submit_search")
     public WebElement searchButton;
+    @FindBy(css= "[title='Women'][class='sf-with-ul']")
+    public WebElement womensTab;
+    @FindBy(xpath = "(//*[@title=\"Casual Dresses\"])[1]")
+    public WebElement casualDressLink;
+    @FindBy(css = ".cat-name")
+    public WebElement casualDressTitle;
 }
