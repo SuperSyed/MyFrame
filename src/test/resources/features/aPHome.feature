@@ -22,3 +22,13 @@ Feature: Automation Practice HomePage features
   Scenario: As a user I should see tooltop
     Given I'm on jQuery page
     Then I see tooltip on the age inputbox
+
+    @upload
+    Scenario: As a user I should upload a file in AT
+      Given I'm on automation practice page
+      Then I should be able to upload a file
+
+  @download
+  Scenario: As a user I should download a file
+    Given I'm on automation demo page
+    Then I download a file

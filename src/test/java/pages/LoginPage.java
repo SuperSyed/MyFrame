@@ -28,7 +28,7 @@ public class LoginPage {
     public void login(String username, String password){
         this.userNameInput.sendKeys(username);
         this.passwordInput.sendKeys(password);
-        this.loginButton.click();
+       this.loginButton.click();
     }
 
 

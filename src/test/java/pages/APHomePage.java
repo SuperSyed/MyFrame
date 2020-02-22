@@ -31,4 +31,9 @@ public class APHomePage {
     public  WebElement unitedStates;
     @FindBy(id="age")
     public WebElement ageInputBox;
+    @FindBy(css = "input[id^='RESULT_FileUpload']")
+    public WebElement uploadButton2;
+    @FindBy(css = ".btn-primary")
+    public WebElement downloadButton;
+
 }
