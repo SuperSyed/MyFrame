@@ -4,6 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.Keys;
 import pages.registerPatientPage;
+import utilities.ConfigurationReader;
 
 public class registerPatientStep {
 
@@ -16,12 +17,15 @@ public class registerPatientStep {
 
     @And("User enters Given name")
     public void userEntersGivenName() {
-        registerPatient.givenName.sendKeys("Shibby");
+        String gName = ConfigurationReader.getProperty("givenName");
+        registerPatient.givenName.sendKeys(gName);
 
     }
     @And("User enters Family name")
-    public void userEntersFamilyName() {
-        registerPatient.familyName.sendKeys("Undertaker");
+    public void userEntersFamilyName() throws InterruptedException {
+        String famName = ConfigurationReader.getProperty("familyName");
+        registerPatient.familyName.sendKeys(famName);
+        Thread.sleep(2000);
         registerPatient.familyName.sendKeys(Keys.ENTER);
         registerPatient.familyName.sendKeys(Keys.ENTER);
         registerPatient.familyName.sendKeys(Keys.ENTER);
@@ -36,7 +40,7 @@ public class registerPatientStep {
 
     @Then("User enters Birthdate information")
     public void userEntersBirthdateInformation() {
-        registerPatient.birthdateYears.sendKeys("18");
+        registerPatient.birthdateYears.sendKeys("21");
         registerPatient.birthdateMonths.sendKeys("11");
         registerPatient.address.click();
 
@@ -44,13 +48,13 @@ public class registerPatientStep {
 
     @And("User fills out contact information")
     public void userFillsOutContactInformation() {
-        registerPatient.enterAddress.sendKeys("1234 testing drive");
-        registerPatient.cityVillage.sendKeys("chinatown");
-        registerPatient.stateProvince.sendKeys("CA");
+        registerPatient.enterAddress.sendKeys("12343 testing drive");
+        registerPatient.cityVillage.sendKeys("Chicago");
+        registerPatient.stateProvince.sendKeys("WV");
         registerPatient.country.sendKeys("USA");
-        registerPatient.postalCode.sendKeys("22191");
+        registerPatient.postalCode.sendKeys("22030");
         registerPatient.phoneNum.click();
-        registerPatient.phoneNumber.sendKeys("2026299929");
+        registerPatient.phoneNumber.sendKeys("2023329987");
         registerPatient.relatives.click();
 
     }
@@ -59,7 +63,7 @@ public class registerPatientStep {
     public void userChoosesRelationship() {
         registerPatient.relationshipType.click();
         registerPatient.selectDoctor.click();
-        registerPatient.personName.sendKeys("Al-Bakhari");
+        registerPatient.personName.sendKeys("Andrew Miller");
         registerPatient.confirmation.click();
     }
 
@@ -69,8 +73,9 @@ public class registerPatientStep {
     }
 
     @Then("User clicks {string} to register as female")
-    public void userClicksToRegisterAsFemale(String arg0) {
+    public void userClicksToRegisterAsFemale(String arg0) throws InterruptedException {
         registerPatient.clickFemale.click();
+        Thread.sleep(2000);
         registerPatient.birthDate.click();
     }
 }
