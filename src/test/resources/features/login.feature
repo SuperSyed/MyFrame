@@ -7,3 +7,7 @@ Feature: Login
     Then I enter valid  password as "Yolladvisor1"
     And I click on login button
     Then I am navigated to home page
+
+ #Testing for a branch
+   And I click on login button
+   Then I am navigated to home page
