@@ -29,6 +29,31 @@ public class PatientRecordPage {
     public WebElement deletePatient;
     @FindBy (id = "delete-reason")
     public WebElement deleteReason;
-    @FindBy (xpath = "//div[@id='delete-patient-creation-dialog']//button[@class='confirm right'][contains(text(),'Confirm')]")
+    @FindBy (xpath = "//html[1]/body[1]/div[5]/div[1]/div[1]/div[2]/button[1]")
     public WebElement confirmDelete;
+    @FindBy(xpath = "//*[@id='content']/div[9]/div/div[2]/div[4]/div[1]/i[2]")
+    public WebElement allerigiesPencil;
+    @FindBy(id = "allergyui-addNewAllergy")
+    public WebElement addAllergButton;
+    @FindBy(id = "allergen-80106")
+    public WebElement morphineButton;
+    @FindBy(id = "reaction-142412")
+    public WebElement diarrehaButton;
+    @FindBy(id = "reaction-143264")
+    public WebElement coughButton;
+    @FindBy(id = "reaction-139084")
+    public WebElement headacheButton;
+    @FindBy(id = "reaction-139581")
+    public WebElement giUpset;
+    @FindBy(id = "severity-1500")
+    public WebElement severityButton;
+    @FindBy(id = "allergy-comment")
+    public WebElement allergyComment;
+    @FindBy(id = "addAllergyBtn")
+    public WebElement submitButton;
+    @FindBy(xpath = "//*[@id='content']/div[1]/div[1]/h1/span[1]/span")
+    public WebElement clickOnFirstName;
+    @FindBy (xpath = "//*[@id='content']/div[9]/div/div[2]/div[4]/div[2]/ul/li/span[1]")
+    public WebElement morphineVerify;
+
 }

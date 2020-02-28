@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         "json:target/cucumber.json"},
         features="src/test/resources/features",
         glue="step_definitions",
-        tags="@OM-loginWrong",
+        tags="@registerOM-male",
         dryRun = false,
         monochrome = true
 )

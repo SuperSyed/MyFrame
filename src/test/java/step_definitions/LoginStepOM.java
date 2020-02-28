@@ -64,7 +64,8 @@ public class LoginStepOM {
     }
 
     @Then("User logs out")
-    public void userLogsOut() {
+    public void userLogsOut() throws InterruptedException {
+        Thread.sleep(2000);
         loginPageOM.logoutButton.click();
 
     }

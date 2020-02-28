@@ -2,6 +2,7 @@ package step_definitions;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import org.junit.Assert;
 import pages.PatientRecordPage;
 import utilities.ConfigurationReader;
 
@@ -52,5 +53,27 @@ public class PatientRecordStep {
         patientRecord.deletePatient.click();
         patientRecord.deleteReason.sendKeys("testing purpose");
         patientRecord.confirmDelete.click();
+
+    }
+
+    @Then("User is able to add a new condition")
+    public void userIsAbleToAddANewCondition() {
+    }
+
+    @Then("User can update allergies")
+    public void userCanUpdateAllergies() throws InterruptedException {
+        Thread.sleep(3000);
+        patientRecord.allerigiesPencil.click();
+        patientRecord.addAllergButton.click();
+        patientRecord.morphineButton.click();
+        patientRecord.coughButton.click();
+        patientRecord.diarrehaButton.click();
+        patientRecord.giUpset.click();
+        patientRecord.headacheButton.click();
+        patientRecord.severityButton.click();
+        patientRecord.allergyComment.sendKeys("I feel like I'm going to die!!!!!!");
+        patientRecord.submitButton.click();
+        patientRecord.clickOnFirstName.click();
+        Assert.assertEquals(patientRecord.morphineVerify.getText().trim(),"Morphine");
     }
 }

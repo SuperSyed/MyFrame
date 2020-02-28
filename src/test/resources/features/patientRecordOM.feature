@@ -31,7 +31,31 @@ Feature: Search patient record functionality
     Then User lands on patient dashboard
     And User can delete patient
 
+  @new-condition
+  Scenario: User should be able to add active conditions to patient
+    Given User navigates to OpenMrs login page and logged in
+    Then User clicks find patient record
+    And User is able to search patient record by a name
+    And User clicks the searched patient's name
+    Then User lands on patient dashboard
+    Then User is able to add a new condition
 
+  @update-allergies
+  Scenario: User should be able to add active conditions to patient
+    Given User navigates to OpenMrs login page and logged in
+    Then User clicks find patient record
+    And User is able to search patient record by a name
+    And User clicks the searched patient's name
+    Then User lands on patient dashboard
+    Then User can update allergies
+
+#  User story 5: Patient conditions and allergies functionality
+#  ○ Scenario 1: User should be able to add active conditions to patient
+#  ■ search for a patient -> click on patient -> verify you're on patient
+#  dashboard -> add a new condition
+#  ○ Scenario 2: User should be able to add allergies to patient
+#  ■ search for a patient -> click on patient -> verify you're on patient
+#  dashboard -> add a new allergy
 
 #  User story 4: Patient record functionality
 #  ○ Scenario 1: User should be able to view patient dashboard

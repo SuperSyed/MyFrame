@@ -36,6 +36,7 @@ Feature:
 
 
 
+
 #● User story 2: Register patient record functionality
 #○ Scenario 1: User should be able to register male patient
 #○ Scenario 2: User should be able to register female patient

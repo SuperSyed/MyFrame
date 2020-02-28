@@ -1,5 +1,6 @@
 package step_definitions;
 
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.Keys;
@@ -8,7 +9,7 @@ import utilities.ConfigurationReader;
 
 public class registerPatientStep {
 
-
+    Faker faker = new Faker();
     registerPatientPage registerPatient = new registerPatientPage();
     @Then("User clicks register a patient")
     public void user_clicks_register_a_patient() {
@@ -40,7 +41,7 @@ public class registerPatientStep {
 
     @Then("User enters Birthdate information")
     public void userEntersBirthdateInformation() {
-        registerPatient.birthdateYears.sendKeys("21");
+        registerPatient.birthdateYears.sendKeys("18");
         registerPatient.birthdateMonths.sendKeys("11");
         registerPatient.address.click();
 
@@ -48,13 +49,13 @@ public class registerPatientStep {
 
     @And("User fills out contact information")
     public void userFillsOutContactInformation() {
-        registerPatient.enterAddress.sendKeys("12343 testing drive");
-        registerPatient.cityVillage.sendKeys("Chicago");
-        registerPatient.stateProvince.sendKeys("WV");
-        registerPatient.country.sendKeys("USA");
-        registerPatient.postalCode.sendKeys("22030");
+        registerPatient.enterAddress.sendKeys(faker.address().streetAddress());
+        registerPatient.cityVillage.sendKeys(faker.address().city());
+        registerPatient.stateProvince.sendKeys(faker.address().state());
+        registerPatient.country.sendKeys(faker.address().country());
+        registerPatient.postalCode.sendKeys(faker.address().zipCode());
         registerPatient.phoneNum.click();
-        registerPatient.phoneNumber.sendKeys("2023329987");
+        registerPatient.phoneNumber.sendKeys(faker.phoneNumber().cellPhone());
         registerPatient.relatives.click();
 
     }
@@ -63,7 +64,7 @@ public class registerPatientStep {
     public void userChoosesRelationship() {
         registerPatient.relationshipType.click();
         registerPatient.selectDoctor.click();
-        registerPatient.personName.sendKeys("Andrew Miller");
+        registerPatient.personName.sendKeys(faker.name().firstName()+" "+faker.name().lastName());
         registerPatient.confirmation.click();
     }
 

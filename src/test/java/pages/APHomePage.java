@@ -36,4 +36,31 @@ public class APHomePage {
     @FindBy(css = ".btn-primary")
     public WebElement downloadButton;
 
+
+    @FindBy(id = "email_create")
+    public WebElement emailInputBox;
+    @FindBy(id = "SubmitCreate")
+    public WebElement createAccountBtn;
+    @FindBy(id = "customer_firstname")
+    public WebElement firstname;
+    @FindBy(id = "customer_lastname")
+    public WebElement lastname;
+    @FindBy(id = "passwd")
+    public WebElement password;
+    @FindBy(id = "address1")
+    public WebElement streetName;
+    @FindBy(id = "city")
+    public WebElement cityName;
+    @FindBy(id = "id_state")
+    public WebElement stateName;
+    @FindBy(id = "postcode")
+    public WebElement zipCode;
+    @FindBy(id = "phone_mobile")
+    public WebElement phoneNumber;
+    @FindBy(id = "submitAccount")
+    public WebElement registerButton;
+    @FindBy(css = ".page-heading")
+    public WebElement pageHeading;
+    @FindBy(css=".login")
+    public WebElement signInButton;
 }
