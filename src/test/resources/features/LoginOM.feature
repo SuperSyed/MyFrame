@@ -1,3 +1,4 @@
+@regression
 Feature: OpenMrs Login Functionality
 
   @OM-login

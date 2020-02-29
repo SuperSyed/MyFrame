@@ -10,6 +10,7 @@ public class PatientRecordStep {
 
     PatientRecordPage patientRecord = new PatientRecordPage();
 
+
     @Then("User clicks find patient record")
     public void user_clicks_find_patient_record() {
     patientRecord.patientRecordbutton.click();

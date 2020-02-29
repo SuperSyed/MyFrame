@@ -1,3 +1,4 @@
+@regression
 Feature: Search patient record functionality
 
   @find-patient-record

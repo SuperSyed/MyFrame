@@ -4,13 +4,21 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.junit.Before;
 import pages.LoginPage;
 import pages.LoginPageOM;
 import utilities.ConfigurationReader;
 import utilities.Driver;
 
+import java.util.concurrent.TimeUnit;
+
 public class LoginStepOM {
     LoginPageOM loginPageOM = new LoginPageOM();
+    @Before
+    public void setUp(){
+        Driver.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        Driver.getDriver().manage().window().maximize();
+    }
 
     @Given("User navigate to OpenMrs login page")
     public void user_navigate_to_OpenMrs_login_page() {
@@ -65,7 +73,7 @@ public class LoginStepOM {
 
     @Then("User logs out")
     public void userLogsOut() throws InterruptedException {
-        Thread.sleep(2000);
+        //Thread.sleep(2000);
         loginPageOM.logoutButton.click();
 
     }
